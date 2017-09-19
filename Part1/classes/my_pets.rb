@@ -16,9 +16,15 @@ class MyPets
 
   def add_dog(name, breed)
     @dogs << Dog.new(name, breed)
+    thank_you('perro')
   end
   def add_cat(name)
     @cats << Cat.new(name)
+    thank_you('gato')
+  end
+
+  def thank_you(animal)
+    "Gracias por tu #{animal}"
   end
 end
 

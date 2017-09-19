@@ -1,17 +1,18 @@
-class Dog
-  attr_reader :name, :breed
-
+require_relative 'pet'
+class Dog < Pet
+  attr_accessor :breed, :health
   def initialize(name, breed)
-    @name = name.capitalize
+    super(name)
     @breed = breed
-  end
-
-  def to_s
-    "#{@name} is a #{@breed}: #{bark}"
+    @health = 100
   end
 
   def bark
     "Woof Woof"
+  end
+
+  def sound
+    super + bark
   end
 end
 

@@ -1,21 +1,21 @@
-class Cat
-  attr_reader :name
+require './pet.rb'
+class Cat < Pet
+  attr_accessor :health
 
   def initialize(name)
-    @name = name.capitalize
+    super(name)
+    @health = 100
   end
-
-  def to_s
-    "#{@name}: #{meow}"
-  end
-
   def meow
     "Miau!!!!"
+  end
+  def sound
+    meow
   end
 end
 
 if __FILE__ == $0
-  my_cat = Cat.new("Canela")
+  my_cat = Cat.new("canela")
   puts my_cat.name
   puts my_cat.meow
   puts my_cat
